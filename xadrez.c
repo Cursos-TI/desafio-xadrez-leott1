@@ -1,4 +1,38 @@
 #include <stdio.h>
+// definindo funcoes 
+void torre(int n)
+{
+    if (n > 0)
+    {
+         printf("Direita\n");
+         torre(n - 1);
+    }
+}
+void bispo(int k) {
+    if (k > 0) {
+        printf("Cima\n");
+        printf("Direita\n");
+        bispo(k - 1);  // Chama a função recursivamente
+    }
+}
+void cavalo(int o) 
+{
+    while(o--){
+            
+        for (int o = 0; o < 2; o++){
+                printf("Baixo\n");
+        
+        } 
+        printf("Esquerda\n");
+    }
+}
+void rainha(int b) 
+{
+    while (b < 8){
+        printf("Esquerda\n");
+        b++; }
+    
+}
 
 int main(){
     
@@ -25,10 +59,9 @@ int main(){
         
             printf("Você escolheu torre.\n");
             printf("A peça escolhida moverá cinco casas para direita.\n");
-            do {
-                printf("Direita\n");
-                i++;
-            } while (i < 5); 
+            // define parametro para funcao recursiva
+            int quantidade = 5;
+            torre(quantidade);
             
                 break;
         case 2:
@@ -36,23 +69,17 @@ int main(){
 
             printf("Você escolheu Bispo.\n");
             printf("A peça escolhida moverá cinco casas à diagonal.\n");
+            int qtdb = 5;
+            bispo(qtdb);
 
-                for (int a = 0; a < 5; a++)
-                {
-                printf("Cima\n");
-                printf("Direita\n");
-                }
-            
                 break;
         case 3:
         // OPCAO 3 UTLIZANDO WHILE
         
             printf("Você escolheu Rainha.\n");
             printf("A peça escolhida moverá oito casas à esquerda.\n");
-
-                while (b < 8){
-                printf("Esquerda\n");
-                b++; }
+            int movra = 0;
+            rainha(movra);
         
                 break;
         case 4:
@@ -63,15 +90,9 @@ int main(){
 
             // defome variavel movimento cavalo
             int movcav = 1;
+            cavalo(movcav);
 
-            while(movcav--){
             
-                for (int i = 0; i < 2; i++){
-                        printf("Baixo\n");
-                
-                } 
-                printf("Esquerda\n");
-            }
                 break;
         
         default:
